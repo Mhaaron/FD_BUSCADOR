@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*Buena práctica*/
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-flow: column;
+    font-size: 16px;
+}
+
+.header {
+    outline: 1px solid gold;
+    height: 3rem;
+}
+.header__menu {
+    display: flex;
+}
+.header__menu-item {
+    list-style: none;
+    flex: 1;
+    /*Para que cubra toda la altura del padre se define la misma medida para el hijo*/
+    /*Solo para cuando es una sola linea*/
+    line-height: 3rem;
+    text-align: center;
+    /*Más limpia la animación*/
+    transition: flex .5s;
+}
+.header__menu-item:hover {
+    flex: 8;
+}
+#home {
+    background: green;
+}
+#gallery {
+    background: orange;
+}
+#about {
+    background: blue;
+}
+#contact {
+    background: yellow;
+}
+.container {
+    display: flex;
+    /*Hereda la altura del padre*/
+    height: inherit;
+}
+.content {
+    outline: 1px solid cyan;
+    /*Otra forma sería: 1 1 auto*/
+    /*Ocupa todo el ancho disponible*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.content h1 {
+    outline: 1px solid black;
+    text-align: center;
+    width: 50%;
+}
+.content img {
+    outline: 1px solid gray;
+    font-size: 24px;
+    text-align: center;
+    width: 80%;
+    height: 20%;
+}
+.content td {
+    outline: 1px solid gray;
+}
+td {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0 20px;
+    text-align: justify;
+    vertical-align: top;
+    width: 50%;
+}
+
+td.first {
+    border-right: 5px solid #4BB495  ;
+}
+.aside {
+    /*Bueno para maquetar*/
+    outline: 1px solid magenta;
+    /*Los primeros dos absolutos y basis relativo*/
+    /*flex-grow | flex-shrink | flex-basis*/
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aside p {
+    outline: 1px solid yellow;
+    font-size: 40px;
+    text-align: center;
+}
+.animated {
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+@keyframes wobble {
+    0% {transform: translateX(0%);}
+    15% {transform: translateX(-25%) rotate(-5deg);}
+    30% {transform: translateX(20%) rotate(3deg);}
+    45% {transform: translateX(-15%) rotate(-3deg);}
+    60% {transform: translateX(10%) rotate(2deg);}
+    75% {transform: translateX(-5%) rotate(-1deg);}
+    100% {transform: translateX(0%);}
+  }
+  .wobble {
+    animation-name: wobble;
+  }
+.footer {
+    /*Se define fuera del elemento pero no ocupa espacio y no afecta todo lo demas*/
+    outline: 1px solid salmon;
+    height: 6rem;
+    /*Cubre todo el top automaticamente*/
+    margin-top: auto;
+}
+.footer__menu {
+    display: flex;
+}
+.footer__menu-item {
+    list-style: none;
+    flex: 1;
+    outline: 1px solid blue;
+    line-height: 6rem;
+    text-align: center;
+    transition: font-size 0.5s;
+}
+.footer__menu-item:hover {
+    font-size: 24px;
+    text-decoration: underline;
+}

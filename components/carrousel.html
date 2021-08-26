@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+    .carrousel {
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+    .carrousel__container {
+        /*Esta propiedad hace que los elementos se agrupen en una sola linea horizontal*/
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+    .carrousel-item {
+        background-color: palevioletred;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        /*Por defecto todos usan block, se cambia a inline para que se aplique el white-space: nowrap*/
+        display: inline-block;
+        cursor: pointer;
+        /*Tiempo de la transición*/
+        transition: 450ms all;
+        /*Se centra e inicia de isquierda a derecha*/
+        transform-origin: center left;
+        position: relative;
+    }
+    /*sub-clase hover*/
+    /*La virgulina se usa para que se aplique aunque no tenga el over*/
+    .carrousel-item:hover ~ .carrousel-item {
+        /*Cuando se apliqu el over hace que los elementos se desplacen hacia la derecha*/
+        transform: translate3d(100px, 0, 0);
+    }
+    .carrousel__container:hover .carrousel-item {
+        opacity: 0.3;
+    }
+    /*Se le aplica a ambos para que la selección del item sea más pura, más directa, más definida*/
+    .carrousel__container:hover .carrousel-item:hover {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    .carrousel-item__img {
+        width: 200px;
+        height: 250px;
+        /*Recupera el tamaño o formato original de la imagen*/
+        object-fit: cover;
+    }
+    .carrousel-item__details {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+        font-size: 10px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: white;
+        font-size: 12px;
+        font-family: 'Mulish', sans-serif;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    .carrousel-item__details p {
+        margin: 0;
+    }
+    .carrousel-item__details img {
+        height: 25px;
+    }
+    .carrousel-item__details:hover {
+        opacity: 1;
+    }
+</style>
+<body>
+    <section class="carrousel">
+        <div class="carrousel__container">
+            <!-- Aquí no se aplica como hijo ya que sera un padre -->
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels3.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels2.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels1.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels4.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels5.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels6.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels7.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+            <div class="carrousel-item">
+                <img class="carrousel-item__img" src="../assets/pexels8.jpg">
+                <div class="carrousel-item__details">
+                    <div>
+                        <img src="../icons/play.png" alt="Play"/>
+                        <img src="../icons/plus.png" alt="Plus">
+                    </div>
+                    <p>Título descriptivo</p>
+                    <p>2021 16+ 114 minutos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
